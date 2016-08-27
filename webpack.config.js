@@ -13,14 +13,15 @@ module.exports = {
 		`webpack/hot/dev-server`,
 		`./client/src/index.js`,
 	],
-	devtool: process.env.WEBPACK_DEVTOOL || 'cheap-module-source-map',
+	devtool: process.env.WEBPACK_DEVTOOL || 'cheap-module-eval-source-map',
 	output: {
 		path: path.join(__dirname, 'public'),
 		filename: 'bundle.js'
 	},
 	module: {
 		loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: {presets: ['es2015']} },
+      {test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: {presets: ['es2015']}},
+      {test: /\.scss$/, loaders: ["style", "css", "sass"]}
     ]
 	},
 	devServer: {
