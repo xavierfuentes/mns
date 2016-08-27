@@ -1,3 +1,5 @@
+import './grid.scss';
+
 class Grid {
   constructor(data) {
     this.$el = document.getElementById('grid');

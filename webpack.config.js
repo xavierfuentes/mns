@@ -4,8 +4,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var Dashboard = require('webpack-dashboard');
 var DashboardPlugin = require('webpack-dashboard/plugin');
 
-const HOST = process.env.HOST || "127.0.0.1";
-const PORT = process.env.PORT || "8080";
+const HOST = process.env.HOST || '127.0.0.1';
+const PORT = process.env.PORT || '8080';
 
 module.exports = {
 	entry: [
@@ -21,11 +21,12 @@ module.exports = {
 	module: {
 		loaders: [
       {test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: {presets: ['es2015']}},
-      {test: /\.scss$/, loaders: ["style", "css", "sass"]}
+      {test: /\.scss$/, loaders: ['style', 'css', 'sass']},
+      {test: /\.css$/, loaders: ['style', 'css']}
     ]
 	},
 	devServer: {
-		contentBase: "./dist",
+		contentBase: './dist',
 		noInfo: true,
 		hot: true,
     quiet: true,
