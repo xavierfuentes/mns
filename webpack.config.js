@@ -20,7 +20,7 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-      { test: /\.js?$/, exclude: /(node_modules)/, loader: 'babel' },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: {presets: ['es2015']} },
     ]
 	},
 	devServer: {
@@ -38,7 +38,7 @@ module.exports = {
     new DashboardPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
-			// template: './client/src/index.html',
+			template: './client/src/index.html',
 		})
 	]
 };
