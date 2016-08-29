@@ -8,7 +8,7 @@ npm install
 npm run client:dev
 ```
 
-Open a browser tab and navigate to (http://localhost:8080/)[http://localhost:8080/] 
+Open a browser tab and navigate to [http://localhost:8080/](http://localhost:8080/)
 
 ## Description
 
