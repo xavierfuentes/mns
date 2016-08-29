@@ -1,11 +1,16 @@
-# M&S Web Engineering Coding Test
+## Quick start
 
-Spend 45 minutes on the following task as though it were a real task for your
-employer. Once finished, zip all the files and email it back to your contact
-person.
+It requires `NodeJs >= 6`
 
-Finishing this task is not a requirement. Provide inline comments for
-improvements you would have made if you had more time to finish the task.
+```
+git clone https://github.com/xavifuefer/mns.git
+npm install
+npm run client:dev
+```
+
+Open a browser tab and navigate to (http://localhost:8080/)[http://localhost:8080/] 
+
+## Description
 
 Task: Create a grid using no JavaScript frameworks or libraries. The grid should
 get its data from the provided JSON file `data.json`, and display all the
