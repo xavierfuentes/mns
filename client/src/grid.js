@@ -2,14 +2,10 @@ import './grid.scss';
 
 class Grid {
   constructor(data) {
+    this.namespace = 'mns';
     this.$el = document.getElementById('grid');
     this.data = data;
-    // todo: use localstorage to persist the state
-    this.state = {
-      data: Object.assign([], data),
-      orderBy: '',
-      filterBy: ''
-    };
+    this.state = JSON.parse(localStorage.getItem(this.namespace));
   }
 
   render() {
@@ -40,6 +36,8 @@ class Grid {
     const $label = document.createElement('label');
 
     $toolbar.classList.add('toolbar');
+
+    $filter.value = this.state.filterBy;
 
     $label.innerText = 'filter by title:';
     $label.appendChild($filter);
@@ -112,6 +110,8 @@ class Grid {
     });
 
     this.state = newState;
+
+    localStorage.setItem(this.namespace, JSON.stringify(newState));
 
     console.log('state -> ', newState);
   }
