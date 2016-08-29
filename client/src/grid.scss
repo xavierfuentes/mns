@@ -5,11 +5,10 @@
   font-size: 16px;
 
   .row {
+    flex: 1;
     display: flex;
-    flex: 0;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    width: 100%;
 
     padding-left: 1em;
     padding-right: 1em;
@@ -25,19 +24,8 @@
     // flex: 1;
     text-overflow: ellipsis;
     overflow: hidden;
-
-    &.title {
-      flex: 1;
-      padding-right: 1em;
-    }
-
-    &.price, &.stars {
-      min-width: 5em;
-      text-align: right;
-    }
-
-    &.price {}
-    &.stars {}
+    // flex: 1 1 100%;
+    padding-right: 1em;
   }
 
   .row.promotion .cell.title {
@@ -47,4 +35,14 @@
       color: red;
     }
   }
+}
+
+@media all and (min-width: 320px) {
+  #grid .row { flex-direction: row; }
+  #grid .row .cell { flex: 1 1 50%; }
+}
+
+@media all and (min-width: 768px) {
+  #grid .row .cell { flex: 1 1 20%; }
+  #grid .row .cell.title { flex: 1 1 60%; }
 }

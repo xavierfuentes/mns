@@ -34,13 +34,11 @@ class Grid {
 
     // todo: we could add events to every row/cell here
 
-    // set the HTML content of every row
-    row.innerHTML = Object.keys(rowData).reduce((tpl, field, index, props) => {
-      // we don't render a column for promotions
-      if (field === 'promotion') return tpl;
-
-      return tpl + `<article class="cell ${field}">${rowData[field]}</article>`;
-    }, '');
+    row.innerHTML = `
+    <article class="cell title">${rowData.title || ''}</article>
+    <article class="cell price">${rowData.price || ''}</article>
+    <article class="cell stars">${rowData.stars || 0}</article>
+    `;
 
     return row;
   }

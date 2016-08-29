@@ -24,6 +24,7 @@ let data = parseData([
 // we make sure ALL elements have the same properties
 // even though some will be empty
 function parseData(data) {
+  return data;
   // we clone the object so the function has no side effects
   const parsedData = Object.assign([], data);
   let keys = [];
