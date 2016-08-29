@@ -15,12 +15,14 @@ class Grid {
   render() {
     const frag = document.createDocumentFragment();
     const grid = document.createElement('section');
-    const toolbar = this.buildToolbar();
 
     grid.classList.add('grid-data');
 
     // toolbar
-    frag.appendChild(toolbar);
+    frag.appendChild(this.buildToolbar());
+
+    // toolbar
+    frag.appendChild(this.buildHeader());
 
     // rows
     frag.appendChild(grid);
@@ -46,6 +48,20 @@ class Grid {
     $toolbar.appendChild($label);
 
     return $toolbar;
+  }
+
+  buildHeader() {
+    const $header = document.createElement('section');
+
+    $header.classList.add('header');
+
+    $header.innerHTML = `
+    <article class="cell title">Title</article>
+    <article class="cell price">Price</article>
+    <article class="cell stars">Stars</article>
+    `;
+
+    return $header;
   }
 
   buildRow(rowData) {

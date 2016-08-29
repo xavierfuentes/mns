@@ -5,6 +5,7 @@
   font-size: 16px;
 
   .toolbar,
+  .header,
   .row {
     padding-left: 1em;
     padding-right: 1em;
@@ -30,14 +31,21 @@
     }
   }
 
+  .header,
   .row {
     flex: 1;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-
-    border-bottom: .125em solid #e0e0e0;
     border-collapse: collapse;
+  }
+
+  .header {
+    border-bottom: .250em solid #e0e0e0;
+  }
+
+  .row {
+    border-bottom: .125em solid #e0e0e0;
 
     &.promotion {}
   }
@@ -60,11 +68,11 @@
 }
 
 @media all and (min-width: 320px) {
-  #grid .row { flex-direction: row; }
-  #grid .row .cell { flex: 1 1 50%; }
+  #grid .row, #grid .header { flex-direction: row; }
+  #grid .row .cell, #grid .header .cell { flex: 1 1 50%; }
 }
 
 @media all and (min-width: 768px) {
-  #grid .row .cell { flex: 1 1 20%; }
-  #grid .row .cell.title { flex: 1 1 60%; }
+  #grid .row .cell, #grid .header .cell { flex: 1 1 20%; }
+  #grid .row .cell.title, #grid .header .cell.title { flex: 1 1 60%; }
 }
