@@ -13,7 +13,7 @@ module.exports = {
 		`webpack/hot/dev-server`,
 		`./client/src/index.js`,
 	],
-	devtool: process.env.WEBPACK_DEVTOOL || 'cheap-module-eval-source-map',
+	devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
 	output: {
 		path: path.join(__dirname, 'public'),
 		filename: 'bundle.js'
@@ -41,6 +41,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
 			template: './client/src/index.html',
+      hash: true,
 		})
 	]
 };

@@ -24,13 +24,22 @@ class Grid {
   buildRow(rowData) {
     const row = document.createElement('section');
 
+    // add a row class
     row.classList.add('row');
+
+    // add a class for promotion rows
+    if (rowData.hasOwnProperty('promotion') && rowData.promotion === true) {
+      row.classList.add('promotion');
+    }
 
     // todo: we could add events to every row/cell here
 
-    row.innerHTML = Object.keys(rowData).reduce((tpl, field) => {
-      tpl += `<article class="cell">${rowData[field]}</article>`;
-      return tpl;
+    // set the HTML content of every row
+    row.innerHTML = Object.keys(rowData).reduce((tpl, field, index, props) => {
+      // we don't render a column for promotions
+      if (field === 'promotion') return tpl;
+
+      return tpl + `<article class="cell ${field}">${rowData[field]}</article>`;
     }, '');
 
     return row;
