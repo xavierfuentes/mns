@@ -42,6 +42,25 @@
 
   .header {
     border-bottom: .250em solid #e0e0e0;
+
+    .cell {
+      display: flex;
+    }
+
+    .actions {
+      display: flex;
+      margin-left: 0.625em;
+    }
+
+    button[data-action^="sort-"] {
+      color: #888888;
+      background: transparent;
+      border: none;
+      font-size: .5em;
+      outline: none;
+
+      &:hover { cursor: pointer; }
+    }
   }
 
   .row {
@@ -51,10 +70,8 @@
   }
 
   .cell {
-    // flex: 1;
     text-overflow: ellipsis;
     overflow: hidden;
-    // flex: 1 1 100%;
     padding-right: 1em;
   }
 
