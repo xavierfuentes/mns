@@ -1,5 +1,7 @@
 ## Quick start
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/xavifuefer/mns.svg)](https://greenkeeper.io/)
+
 It requires `NodeJs >= 6`
 
 ```
